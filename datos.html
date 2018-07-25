@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?</title>
+  <meta name="description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?" />
+  
+  <meta name="twitter:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  
+
+<meta name="author" content="Act. Andrés Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduccion.html">
+<link rel="next" href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"> ¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana? </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introduccion</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripcion de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><i class="fa fa-check"></i><b>4</b> Analisis exploratorio de los datos y estadistica descrpitiva</a><ul>
+<li class="chapter" data-level="4.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#estadistica-descriptiva"><i class="fa fa-check"></i><b>4.1</b> Estadistica Descriptiva</a></li>
+<li class="chapter" data-level="4.2" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#analisis-univariado"><i class="fa fa-check"></i><b>4.2</b> Analisis Univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#analisis-multivariado"><i class="fa fa-check"></i><b>4.3</b> Analisis Multivariado</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#relaciones-entre-regresores-y-variable-explicada"><i class="fa fa-check"></i><b>4.3.1</b> Relaciones entre regresores y variable explicada</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#conclusiones-del-analisis-exploratorio-de-de-datos"><i class="fa fa-check"></i><b>4.4</b> Conclusiones del analisis exploratorio de de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html"><i class="fa fa-check"></i><b>5</b> Modelo econometrico</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#resultados-del-modelo-de-regresion"><i class="fa fa-check"></i><b>5.1</b> Resultados del modelo de regresion</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#interpretacion-de-los-resultados-de-regresion"><i class="fa fa-check"></i><b>5.1.1</b> Interpretacion de los resultados de regresion</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#analisis-de-residuales"><i class="fa fa-check"></i><b>5.2</b> Analisis de residuales</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#tests-graficos-para-comprobar-los-supuestos-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>5.2.1</b> Tests graficos para comprobar los supuestos de regresion lineal multiple</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#tests-estadisticos-para-comprobar-las-hipotesis-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>5.2.2</b> Tests estadisticos para comprobar las hipotesis de regresion lineal multiple</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#identificacion-de-los-valores-extremos-e-influyentes"><i class="fa fa-check"></i><b>5.2.3</b> Identificacion de los valores extremos e influyentes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interpretacion-economica-del-modelo.html"><a href="interpretacion-economica-del-modelo.html"><i class="fa fa-check"></i><b>6</b> Interpretacion economica del modelo</a></li>
+<li class="chapter" data-level="7" data-path="evaluacion-predictiva-del-modelo.html"><a href="evaluacion-predictiva-del-modelo.html"><i class="fa fa-check"></i><b>7</b> Evaluacion predictiva del modelo</a></li>
+<li class="chapter" data-level="8" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>8</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos" class="section level1">
+<h1><span class="header-section-number">3</span> Datos</h1>
+<p>los datos utilizados en este proyecto son los proporcionados por la Encuesta Nacional Ingresos y Gastos de los hogares en su edicion 2016 (ENIGH 2016). El objetivo de esta encuesta es el de proporcionar un panorama estadistico del comportamiento de los ingresos y gastos de los hogares en cuanto a su monto, procedencia y distribucion, adicionalmente la encuesta ofrece caracteristicas ocupacionales y socio demograficas de la infraestructura de la vivienda y el equipamiento del hogar. El periodo de levantamiento de la encuesta fue del 21 de Agosto del 2016 al 28 de noviembre del 2016. La cobertura geografica de la encuesta es a nivel nacional.</p>
+<p>Para conformar la base de datos de la investigacion utilice el archivo concentradohogar.csv que se encuentra disponible en la pestana de microdatos en el sitio web de la <a href="http://www.beta.inegi.org.mx/proyectos/enchogares/regulares/enigh/nc/2016/">ENIGH</a></p>
+<div id="descripcion-de-las-variables" class="section level2">
+<h2><span class="header-section-number">3.1</span> Descripcion de las variables</h2>
+<p>A continuacion, presento una tabla de las variables que conforman la base de datos utilizada en este analisis, el numero significa la columna en la que se encuentran en el archivo, su nombre, su etiqueta, su categoria (si es numerica o categorica) y en caso de ser categorica el numero de niveles que la conforman. El archivo se compone de 70,311 unidades observacionales, de las cuales seleccione 1000 mediante un muestreo aleatorio y omiti de la base aquellos cuyo gasto en vivienda reportado es del orden de centavos, ya que estos datos no tienen ningun sentido economico ni financiero y claramente son errores de captura.Gracias al procedimiento anteriormente mencionado me quedo con 969 unidades para realizar el analisis.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-7">Table 3.1: </span>Tabla de variables a utilizar.</caption>
+<thead>
+<tr class="header">
+<th align="right">Numero</th>
+<th align="left">variable</th>
+<th align="left">etiqueta</th>
+<th align="left">unidades</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">6</td>
+<td align="left">estsocio</td>
+<td align="left">estrato socio economico</td>
+<td align="left">categorica, con niveles de 1 a 4</td>
+</tr>
+<tr class="even">
+<td align="right">11</td>
+<td align="left">sexojefe</td>
+<td align="left">sexo del jefe de familia</td>
+<td align="left">categorica con niveles 0 o 1</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="left">educajefe</td>
+<td align="left">educacion formal del jefe de familia</td>
+<td align="left">categorica con niveles 1 a 11</td>
+</tr>
+<tr class="even">
+<td align="right">13</td>
+<td align="left">totinteg</td>
+<td align="left">numero de integrantes del hogar</td>
+<td align="left">numerica</td>
+</tr>
+<tr class="odd">
+<td align="right">14</td>
+<td align="left">ingcor</td>
+<td align="left">ingreso corriente trimestral de la unidad de observacion</td>
+<td align="left">numerica</td>
+</tr>
+<tr class="even">
+<td align="right">58</td>
+<td align="left">gastomon</td>
+<td align="left">gasto corriente trimestral de la unidad de observacion</td>
+<td align="left">numerica</td>
+</tr>
+<tr class="odd">
+<td align="right">80</td>
+<td align="left">vivienda</td>
+<td align="left">gasto en vivienda trimestral, se incluye renta o pago de hipoteca, gasto en servicios de reconstruccion y en agua</td>
+<td align="left">numerica</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-8">Table 3.2: </span> niveles de la variable categorica sexo del jefe de familia.</caption>
+<thead>
+<tr class="header">
+<th align="right">Valor</th>
+<th align="left">Etiqueta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">Mujer</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">Hombre</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-8">Table 3.2: </span> niveles de la variable categorica estrato socio-economico.</caption>
+<thead>
+<tr class="header">
+<th align="right">Valor</th>
+<th align="left">Etiqueta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">Bajo</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">Medio Bajo</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">Medio Alto</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">Alto</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-8">Table 3.2: </span> niveles de la variable categorica educacion formal del jefe de familia.</caption>
+<thead>
+<tr class="header">
+<th align="right">Valor</th>
+<th align="left">Etiqueta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">sin instruccion</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">preescolar</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">primaria incompleta</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">primaria completa</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">secundaria incompleta</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">secundaria completa</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">preparatoria incompleta</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">preparatoria completa</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">profesional incompleta</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">profesional completa</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">posgrado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduccion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/modeloMacroEconometrico.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

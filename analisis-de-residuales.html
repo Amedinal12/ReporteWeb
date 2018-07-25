@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?</title>
+  <meta name="description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?" />
+  
+  <meta name="twitter:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  
+
+<meta name="author" content="Act. Andrés Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-07-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="interpretacion-economica-del-modelo.html">
+<link rel="next" href="evaluacion-predictiva-del-modelo.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introduccion</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripcion de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><i class="fa fa-check"></i><b>4</b> Analisis exploratorio de los datos y estadistica descrpitiva</a><ul>
+<li class="chapter" data-level="4.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#relaciones-multivariadas"><i class="fa fa-check"></i><b>4.1</b> Relaciones multivariadas</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#relaciones-entre-regresores-y-variable-explicada"><i class="fa fa-check"></i><b>4.1.1</b> Relaciones entre regresores y variable explicada</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#conclusiones-del-analisis-exploratorio-de-de-datos"><i class="fa fa-check"></i><b>4.2</b> Conclusiones del analisis exploratorio de de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html"><i class="fa fa-check"></i><b>5</b> Modelo econometrico</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#resultados-del-modelo-de-regresion"><i class="fa fa-check"></i><b>5.1</b> Resultados del modelo de regresion</a></li>
+<li class="chapter" data-level="5.2" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#conclusiones-estadisticas-del-resumen-de-regresion"><i class="fa fa-check"></i><b>5.2</b> Conclusiones estadisticas del resumen de regresion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interpretacion-economica-del-modelo.html"><a href="interpretacion-economica-del-modelo.html"><i class="fa fa-check"></i><b>6</b> Interpretacion economica del modelo</a></li>
+<li class="chapter" data-level="7" data-path="analisis-de-residuales.html"><a href="analisis-de-residuales.html"><i class="fa fa-check"></i><b>7</b> Analisis de residuales</a><ul>
+<li class="chapter" data-level="7.1" data-path="analisis-de-residuales.html"><a href="analisis-de-residuales.html#tests-graficos-para-comprobar-los-supuestos-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>7.1</b> Tests graficos para comprobar los supuestos de regresion lineal multiple</a></li>
+<li class="chapter" data-level="7.2" data-path="analisis-de-residuales.html"><a href="analisis-de-residuales.html#tests-estadisticos-para-comprobar-las-hipotesis-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>7.2</b> Tests estadisticos para comprobar las hipotesis de regresion lineal multiple</a></li>
+<li class="chapter" data-level="7.3" data-path="analisis-de-residuales.html"><a href="analisis-de-residuales.html#identificacion-de-los-valores-influyentes"><i class="fa fa-check"></i><b>7.3</b> Identificacion de los valores influyentes</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="evaluacion-predictiva-del-modelo.html"><a href="evaluacion-predictiva-del-modelo.html"><i class="fa fa-check"></i><b>8</b> Evaluacion predictiva del modelo</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analisis-de-residuales" class="section level1">
+<h1><span class="header-section-number">7</span> Analisis de residuales</h1>
+<p>El analisis de residuales es una herramienta que me ayudara a comprobar los supuestos que todo modelo de regresi?n lineal multiple (<strong>RLM</strong>) debe cumplir, esto para saber que la inferencia sobre los parametros del modelo es correcta y confiable. Los supuestos de <strong>RLM</strong> son:</p>
+<p><strong>Independencia de los errores</strong> <span class="math display">\[ \ F_{\epsilon_{1},\epsilon_{2}\dots,\epsilon_{n}}(\epsilon_{1},\epsilon_{2},\dots,\epsilon_{n}) = F_{\epsilon_{1}}(\epsilon_{1}) F_{\epsilon_{2}}(\epsilon_{2})\dots  F_{\epsilon_{n}}(\epsilon_{n}) \]</span> donde F es la funcion de distribucion de las perturbaciones.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Linealidad en los par?metros</strong> : para cualquier combinacion de los valores de <span class="math inline">\(\ x_{i}\)</span> se tiene que:<br />
+<span class="math display">\[ \ E(\hat{\epsilon}|X) = 0 \]</span> Esto es para que los estimadores de los efectos ceteris paribus sean insesgados</p></li>
+<li><p><strong>Homocedasticidad condicional</strong> : La varianza de los residuos, dados los parametros es constante, i.e:</p></li>
+</ol>
+<p><span class="math display">\[ \ Var(\hat{\epsilon_{i}}|X) = \sigma_{\epsilon}^{2} \]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Normalidad multivariada</strong> : Los residuos se distribuyen normal con media 0 y varianza constante, i.e:</li>
+</ol>
+<p><span class="math display">\[ \hat{\epsilon}  \sim {\sf }N(0,\sigma_{\epsilon}^{2}) \]</span> Esto es para que los estimadores de los coeficientes de regresion sean eficientes (de minima varianza) y que los intervalos de confianza sean exactos.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>No existencia de multicolinealidad perfecta</strong> : Ninguna de las columnas de la matriz <span class="math inline">\(\ X\)</span> (la matriz de diseno) es combinacion lineal del resto de las columnas, esto es: <span class="math display">\[ \ |(X^{T}X)^{-1}| &gt; 0 \]</span> Esto se pide para que sea posible calcular los estimadores de los coeficientes de regresion, sin empargo, la <strong>Multicolinealidad imperfecta</strong> que es: <span class="math display">\[ \ |(X^{T}X)^{-1}| \approx 0 \]</span> que se presenta cuando existe una alta correlacion entre variables tambien representa un grave error en un modelo, ya que se “inflan” los errores estandar de los estimadores, lo cual genera una impresicion y “ensanchamiento” de los intervalos de confianza.</li>
+</ol>
+<div id="tests-graficos-para-comprobar-los-supuestos-de-regresion-lineal-multiple" class="section level2">
+<h2><span class="header-section-number">7.1</span> Tests graficos para comprobar los supuestos de regresion lineal multiple</h2>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+</div>
+<div id="tests-estadisticos-para-comprobar-las-hipotesis-de-regresion-lineal-multiple" class="section level2">
+<h2><span class="header-section-number">7.2</span> Tests estadisticos para comprobar las hipotesis de regresion lineal multiple</h2>
+<p>Quiero comprobar que la esperanza de los residuos sea 0 , por lo que haré el siguiente contraste de hipotesis con una prueba t <span class="math display">\[ \ H_{0} : E(\epsilon|X) = 0 \hspace{0.5cm} vs \hspace{0.5cm} H_{1}: E(\epsilon|X) \neq 0 \]</span></p>
+<pre><code>## [1] 1</code></pre>
+<p>Como el P-value es mayor que el valor de significancia $ = 0.05 $ acepto la hipotesis nula de que los residuos tienen valor esperado 0.</p>
+<p>Aplico la prueba de Durbin-Watson para detectar si el coeficiente de correlacion es 0 o distinto de cero, esto para verificar la independencia de los residuos, sus hipotesis son :</p>
+<p><span class="math display">\[ \ H_{0} : \rho(i,i+1) = 0 \hspace{0.5cm} vs \hspace{0.5cm} H_{1}: \rho(i,i+1) \neq 0 \]</span></p>
+<pre><code>##  lag Autocorrelation D-W Statistic p-value
+##    1      0.01480526      1.968207    0.66
+##  Alternative hypothesis: rho != 0</code></pre>
+<p>Como el P-value es mayor que el valor <span class="math inline">\(\alpha = 0.05\)</span> entonces acepto la hipotesis nula de que el coeficiente de correlacion es 0.</p>
+<p>Aplico la prueba de Breusch-Pagan, cuyas hipotesis a contrastar son : La varianza de los residuos es constante vs. la varianza de los residuos es una funcion de los valores ajustados del modelo. Esto es para verificar la homocedasticidad. <span class="math display">\[ \ H_{0}: Var(\hat{\epsilon} |X) = \sigma_{\epsilon}^{2} \hspace{0.5cm} vs \hspace{0.5cm} H_{1}: Var(\hat{\epsilon} |X) =  \sigma_{\epsilon}^{2}( \hat{Y}) \]</span></p>
+<pre><code>## 
+##  studentized Breusch-Pagan test
+## 
+## data:  fitb
+## BP = 5.9653, df = 7, p-value = 0.5438</code></pre>
+<p>Como el P-value es mayor que $ = 0.05$ , por lo tanto no rechazo la hipotesis nula de una varianza constante.</p>
+<p>Tambien proveo el resultado de la prueba de Goldfeld-Quandt, cuyas hipotesis son: La varianza es igual en un primer grupo de residuos que en un segundo grupo de residuos vs, la varianza en el primer grupo de residuo es es menor que la varianza en un segundo grupo (es decir, la varianza aumenta conforme crecen los valores ajustados del modelo)</p>
+<p><span class="math display">\[ \ H_{0}: \sigma_{\epsilon_{1}}^{2} = \sigma_{\epsilon_{2}}^{2} \hspace{0.5cm} vs   \hspace{0.5cm} H_{1}: \sigma_{\epsilon_{1}}^{2} &lt; \sigma_{\epsilon_{2}}^{2}\]</span></p>
+<pre><code>## 
+##  Goldfeld-Quandt test
+## 
+## data:  fitb
+## GQ = 0.58906, df1 = 477, df2 = 476, p-value = 1
+## alternative hypothesis: variance increases from segment 1 to 2</code></pre>
+<p>Como el P-value es mayor que el valor de significancia <span class="math inline">\(\alpha = 0.05\)</span> entonces no rechazo la hipotesis nula de que la varianza es igual en ambos segmentos</p>
+<p>Proveo tambien el resultado de la prueba de Kolmogorov-Smirnov, cuyas hipotesis a contrastar son :</p>
+<p><span class="math display">\[ H_{0}: \frac{\hat{\epsilon}}{\sqrt{S^{2}(1-h_{i})}} \sim N(0,1) \hspace{0.5cm} vs \hspace{0.5cm} \frac{\hat{\epsilon}}{\sqrt{S^{2}(1-h_{i})}} \nsim N(0,1) \hspace{0.5cm}  \]</span></p>
+<pre><code>## 
+##  One-sample Kolmogorov-Smirnov test
+## 
+## data:  resultados_fit$.std.resid
+## D = 0.037732, p-value = 0.1267
+## alternative hypothesis: two-sided</code></pre>
+<p>Como el P-value es mayor que el valor de significancia <span class="math inline">\(\alpha = 0.05\)</span> entonces acepto la hipotesis nula de que los residuos estandarizados se distribuyan normal con parametros de media 0 y varianza 1.</p>
+<p>La identificacion de la multicolinealidad no se puede hacer de forma tradicional en este modelo, ya que se incluye un termino cuadratico (la edad del jefe de familia al cuadrado) como regresor, por lo cual, para proveer evidencia de que no existe multicolinealidad entre los regresores, cree un modelo de regresion auxiliar donde excluyo el termino cuadratico. A continuacion presento los factores de inflacion de varianza (FIV) de esa regresion auxiliar.</p>
+<p>Recordemos que los FIV se calculan en dos pasos, primero se crean i distintas regresiones por el m?todo de m?nimos cuadrados cuya variable explicada es <span class="math inline">\(\ X_{i}\)</span> y los regresores son el resto de las variables, es decir</p>
+<p><span class="math display">\[ \ x_{i} = \alpha_{0} + \alpha_{1}x_{1} + \dots + \alpha_{k}x_{k} + \epsilon \]</span> Despues se calcula el FIV para cada coeficiente <span class="math inline">\(\hat{\beta_{i}}\)</span> del modelo de regresion original (En nuestro caso es el modelo que no incluye el termino cuadratico) <span class="math display">\[ \ FIV_{i} = \frac{1}{1-R^{2}_{i}} \]</span> Donde <span class="math inline">\(\ R_{i}^{2}\)</span> es el coeficiente de determinacion de la regresion cuya variable explicada es $ _{i}$ y sus regresores son el resto de las k variables explicativas.</p>
+<p>Por lo general se dice que una variable aporta colinealidad al modelo si <span class="math inline">\(\ FIV(\hat{\beta_{i}}) &gt; 10\)</span> lo cual claramente no ocurre entre los regresores, por lo que podemos descartar la existencia de multicolinealidad ya que no existe evidencia suficiente en pro de esta.</p>
+<pre><code>##                    GVIF Df GVIF^(1/(2*Df))
+## log(gasto_mon) 1.296543  1        1.138658
+## edad_jefe      1.090427  1        1.044235
+## sexo_jefe      1.037531  1        1.018593
+## est_socio      1.226484  3        1.034611</code></pre>
+</div>
+<div id="identificacion-de-los-valores-influyentes" class="section level2">
+<h2><span class="header-section-number">7.3</span> Identificacion de los valores influyentes</h2>
+<p>A continuaci?n presento una tabla cuyos metricas de residuo est?ndar y distancia de cook son aparentemente m?s grandes que el resto (residuo est?ndar &gt; 3 &amp; distancia de cook &gt; 4 veces el promedio de la distancia de cook de los residuos), esto por que son potenciales observaciones extremas.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-44">Table 7.1: </span>Tabla de los valores influyentes</caption>
+<thead>
+<tr class="header">
+<th align="right">count</th>
+<th align="right">.std.resid</th>
+<th align="right">.cooksd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">157</td>
+<td align="right">-3.212012</td>
+<td align="right">0.0140883</td>
+</tr>
+<tr class="even">
+<td align="right">506</td>
+<td align="right">-3.026296</td>
+<td align="right">0.0173619</td>
+</tr>
+<tr class="odd">
+<td align="right">569</td>
+<td align="right">-3.494389</td>
+<td align="right">0.0067647</td>
+</tr>
+<tr class="even">
+<td align="right">698</td>
+<td align="right">-3.125113</td>
+<td align="right">0.0088935</td>
+</tr>
+<tr class="odd">
+<td align="right">737</td>
+<td align="right">-3.886520</td>
+<td align="right">0.0092244</td>
+</tr>
+<tr class="even">
+<td align="right">846</td>
+<td align="right">-3.098029</td>
+<td align="right">0.0183249</td>
+</tr>
+<tr class="odd">
+<td align="right">857</td>
+<td align="right">-3.540299</td>
+<td align="right">0.0102776</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interpretacion-economica-del-modelo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluacion-predictiva-del-modelo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/modeloMacroEconometrico.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

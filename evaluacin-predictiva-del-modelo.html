@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?</title>
+  <meta name="description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?" />
+  
+  <meta name="twitter:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  
+
+<meta name="author" content="Act. Andrés Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-07-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="anlisis-de-residuales.html">
+<link rel="next" href="referencias.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i>Abstracto</a></li>
+<li class="chapter" data-level="" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i>Introduccion</a></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Datos</a><ul>
+<li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#descripcin-de-las-variables"><i class="fa fa-check"></i><b>1.1</b> Descripci?n de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="anlisis-exploratorio-de-los-datos-y-estadstica-descrpitiva.html"><a href="anlisis-exploratorio-de-los-datos-y-estadstica-descrpitiva.html"><i class="fa fa-check"></i><b>2</b> An?lisis exploratorio de los datos y estad?stica descrpitiva</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="anlisis-exploratorio-de-los-datos-y-estadstica-descrpitiva.html"><a href="anlisis-exploratorio-de-los-datos-y-estadstica-descrpitiva.html#relaciones-multivariadas"><i class="fa fa-check"></i><b>2.0.1</b> Relaciones multivariadas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html"><i class="fa fa-check"></i><b>3</b> Relaciones entre regresores y variable explicada</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html#distribucion-del-gasto-en-vivienda-agrupado-por-sexo"><i class="fa fa-check"></i><b>3.0.1</b> Distribucion del gasto en vivienda agrupado por sexo</a></li>
+<li class="chapter" data-level="3.0.2" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html#distribucion-del-gasto-en-vivienda-agrupado-por-total-de-integrantes-del-hogar"><i class="fa fa-check"></i><b>3.0.2</b> Distribucion del gasto en vivienda agrupado por total de integrantes del hogar</a></li>
+<li class="chapter" data-level="3.0.3" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html#distribucion-del-gasto-en-vivienda-agrupado-por-nivel-educativo-del-jefe-de-familia"><i class="fa fa-check"></i><b>3.0.3</b> Distribucion del gasto en vivienda agrupado por nivel educativo del jefe de familia</a></li>
+<li class="chapter" data-level="3.0.4" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html#distribucion-del-gasto-en-vivienda-agrupado-por-estrato-socio-economico"><i class="fa fa-check"></i><b>3.0.4</b> Distribucion del gasto en vivienda agrupado por estrato socio-economico</a></li>
+<li class="chapter" data-level="3.1" data-path="relaciones-entre-regresores-y-variable-explicada.html"><a href="relaciones-entre-regresores-y-variable-explicada.html#conclusiones-del-anlisis-exploratorio-de-de-datos"><i class="fa fa-check"></i><b>3.1</b> Conclusiones del an?lisis exploratorio de de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modelo-economtrico.html"><a href="modelo-economtrico.html"><i class="fa fa-check"></i><b>4</b> Modelo econom?trico</a></li>
+<li class="chapter" data-level="5" data-path="resultados-del-modelo-de-regresin.html"><a href="resultados-del-modelo-de-regresin.html"><i class="fa fa-check"></i><b>5</b> Resultados del modelo de regresi?n</a></li>
+<li class="chapter" data-level="6" data-path="conclusiones-estadsticas-del-resumen-de-regresin.html"><a href="conclusiones-estadsticas-del-resumen-de-regresin.html"><i class="fa fa-check"></i><b>6</b> Conclusiones estad?sticas del resumen de regresi?n</a></li>
+<li class="chapter" data-level="7" data-path="interpretacin-econmica-del-modelo.html"><a href="interpretacin-econmica-del-modelo.html"><i class="fa fa-check"></i><b>7</b> Interpretaci?n econ?mica del modelo</a></li>
+<li class="chapter" data-level="8" data-path="anlisis-de-residuales.html"><a href="anlisis-de-residuales.html"><i class="fa fa-check"></i><b>8</b> An?lisis de residuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="anlisis-de-residuales.html"><a href="anlisis-de-residuales.html#tests-grficos-para-comprobar-los-supuestos-de-regresin-lineal-mltiple"><i class="fa fa-check"></i><b>8.1</b> Tests gr?ficos para comprobar los supuestos de regresi?n lineal m?ltiple</a></li>
+<li class="chapter" data-level="8.2" data-path="anlisis-de-residuales.html"><a href="anlisis-de-residuales.html#tests-estadsticos-para-comprobar-las-hipotesis-de-regresin-lineal-mltiple"><i class="fa fa-check"></i><b>8.2</b> Tests estad?sticos para comprobar las hipotesis de regresi?n lineal m?ltiple</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="anlisis-de-residuales.html"><a href="anlisis-de-residuales.html#identificacin-de-los-valores-influyentes"><i class="fa fa-check"></i><b>8.2.1</b> Identificaci?n de los valores influyentes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="evaluacin-predictiva-del-modelo.html"><a href="evaluacin-predictiva-del-modelo.html"><i class="fa fa-check"></i><b>9</b> Evaluaci?n predictiva del modelo</a></li>
+<li class="chapter" data-level="10" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>10</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de un mexicano?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="evaluacin-predictiva-del-modelo" class="section level1">
+<h1><span class="header-section-number">9</span> Evaluaci?n predictiva del modelo</h1>
+<p>Para esta etapa de la investigaci?n seleccion? otra muestra aleatoria de tama?o 200, elimin? las observaciones que ya se habian incluido en la muestra aleatoria original (los datos de entrenamiento) todo esto con la finalidad conformar un conjunto de datos de prueba.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-46">Table 9.1: </span>Tabla que recoje algunos de los valores exactos vs. los valores predichos por el modelo</caption>
+<thead>
+<tr class="header">
+<th align="right">actuals</th>
+<th align="right">predicted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">7.373374</td>
+<td align="right">6.996638</td>
+</tr>
+<tr class="even">
+<td align="right">5.010635</td>
+<td align="right">6.661774</td>
+</tr>
+<tr class="odd">
+<td align="right">7.326985</td>
+<td align="right">8.096949</td>
+</tr>
+<tr class="even">
+<td align="right">7.928406</td>
+<td align="right">7.781373</td>
+</tr>
+<tr class="odd">
+<td align="right">8.144752</td>
+<td align="right">7.732080</td>
+</tr>
+<tr class="even">
+<td align="right">6.452270</td>
+<td align="right">7.455156</td>
+</tr>
+<tr class="odd">
+<td align="right">5.010635</td>
+<td align="right">6.781590</td>
+</tr>
+<tr class="even">
+<td align="right">7.272398</td>
+<td align="right">6.164553</td>
+</tr>
+<tr class="odd">
+<td align="right">4.890800</td>
+<td align="right">6.310569</td>
+</tr>
+<tr class="even">
+<td align="right">5.228592</td>
+<td align="right">7.351888</td>
+</tr>
+</tbody>
+</table>
+<p>Una medida simple para evaluar el poder predictivo del modelo es el coeficiente del correlaci?n lineal de Pearson, definido como:</p>
+<p><span class="math display">\[ \ r_{xy}(X,Y) =\frac{\ \sum_{i=1}^{n}x_{i}y_{i} - \sum_{i = 1}^{n}x_{i} \sum_{i = 1}^{n}y_{i}} {\sqrt{\sum_{i = 1}^{n}(x_{i}- \bar{x})^{2}}\sqrt{\sum_{i = 1}^{n}(y_{i}- \bar{y})^{2}}} \]</span> El cual es de:</p>
+<pre><code>## [1] 0.5184405</code></pre>
+<p>Este resultado entre mas cercano a 1 es mejor.</p>
+<p>Una segunda medida que proveo es la exactitud Min-Max, que se calcula como: <span class="math display">\[ \ media(\frac{min(actuales,predichos)}{max(actuales,predichos)}) \]</span> y cuyo resultado para el modelo es:</p>
+<pre><code>## [1] 0.9040671</code></pre>
+<p>Este n?mero, que se encuentra entre 0 y 1, entre m?s alto significa mayor precisi?n del modelo, en este caso la precisi?n max-min es del 90%.</p>
+<p>Tambien exploro una medida conocida como la media del porcentaje de error absoluto calculado como</p>
+<p><span class="math display">\[ \ MPEA = media(\frac{abs(predichos-actuales)}{actuales}) \]</span></p>
+<pre><code>## [1] 0.1096576</code></pre>
+<p>Este n?mero,que se encuentra entre 0 y 1, nos dice que el el MAPE del modelo es de aproximadamente 10%. Este n?mero entre m?s bajo mejor, significa la desviaci?n absoluta promedio entre valores predichos y actuales.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="anlisis-de-residuales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/modeloMacroEconometrico.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

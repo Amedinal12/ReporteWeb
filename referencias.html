@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?</title>
+  <meta name="description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?" />
+  
+  <meta name="twitter:description" content="Modelo econometrico para predecir el gasto en vivienda de una familia mexicana" />
+  
+
+<meta name="author" content="Act. Andrés Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-07-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="evaluacion-predictiva-del-modelo.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"> ¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana? </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introduccion</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripcion de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><i class="fa fa-check"></i><b>4</b> Analisis exploratorio de los datos y estadistica descrpitiva</a><ul>
+<li class="chapter" data-level="4.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#estadistica-descriptiva"><i class="fa fa-check"></i><b>4.1</b> Estadistica Descriptiva</a></li>
+<li class="chapter" data-level="4.2" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#analisis-univariado"><i class="fa fa-check"></i><b>4.2</b> Analisis Univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#analisis-multivariado"><i class="fa fa-check"></i><b>4.3</b> Analisis Multivariado</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#relaciones-entre-regresores-y-variable-explicada"><i class="fa fa-check"></i><b>4.3.1</b> Relaciones entre regresores y variable explicada</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html"><a href="analisis-exploratorio-de-los-datos-y-estadistica-descrpitiva.html#conclusiones-del-analisis-exploratorio-de-de-datos"><i class="fa fa-check"></i><b>4.4</b> Conclusiones del analisis exploratorio de de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html"><i class="fa fa-check"></i><b>5</b> Modelo econometrico</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#resultados-del-modelo-de-regresion"><i class="fa fa-check"></i><b>5.1</b> Resultados del modelo de regresion</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#interpretacion-de-los-resultados-de-regresion"><i class="fa fa-check"></i><b>5.1.1</b> Interpretacion de los resultados de regresion</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#analisis-de-residuales"><i class="fa fa-check"></i><b>5.2</b> Analisis de residuales</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#tests-graficos-para-comprobar-los-supuestos-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>5.2.1</b> Tests graficos para comprobar los supuestos de regresion lineal multiple</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#tests-estadisticos-para-comprobar-las-hipotesis-de-regresion-lineal-multiple"><i class="fa fa-check"></i><b>5.2.2</b> Tests estadisticos para comprobar las hipotesis de regresion lineal multiple</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelo-econometrico.html"><a href="modelo-econometrico.html#identificacion-de-los-valores-extremos-e-influyentes"><i class="fa fa-check"></i><b>5.2.3</b> Identificacion de los valores extremos e influyentes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interpretacion-economica-del-modelo.html"><a href="interpretacion-economica-del-modelo.html"><i class="fa fa-check"></i><b>6</b> Interpretacion economica del modelo</a></li>
+<li class="chapter" data-level="7" data-path="evaluacion-predictiva-del-modelo.html"><a href="evaluacion-predictiva-del-modelo.html"><i class="fa fa-check"></i><b>7</b> Evaluacion predictiva del modelo</a></li>
+<li class="chapter" data-level="8" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>8</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">¿Cuales son los factores principales y en que proporcion intervienen en el gasto de vivienda de una familia mexicana?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="referencias" class="section level1">
+<h1><span class="header-section-number">8</span> Referencias</h1>
+<p><span class="citation">(Wooldridge <a href="#ref-Wooldridge2002">2002</a>)</span> <span class="citation">(Editors et al. <a href="#ref-Editors2009">2009</a>)</span> <span class="citation">(Champernowne and Theil <a href="#ref-Champernowne1972">1972</a>)</span> <span class="citation">(Learning, Reserved, and Learning, n.d.)</span> <span class="citation">(Farnsworth <a href="#ref-Farnsworth2008">2008</a>)</span></p>
+
+<div id="refs" class="references">
+<div>
+<p>Champernowne, D. G., and H. Theil. 1972. “Principles of Econometrics.” <em>The Economic Journal</em> 82 (325): 222. doi:<a href="https://doi.org/10.2307/2230222">10.2307/2230222</a>.</p>
+</div>
+<div>
+<p>Editors, Series, Robert Gentleman, Kurt Hornik, and Giovanni G Parmigiani. 2009. <em>Use R !</em> doi:<a href="https://doi.org/10.1007/978-0-387-78171-6">10.1007/978-0-387-78171-6</a>.</p>
+</div>
+<div>
+<p>Farnsworth, Grant V. 2008. “Econometrics in R.” <em>I Can</em>, 50.</p>
+</div>
+<div>
+<p>Learning, Cengage, All Rights Reserved, and Cengage Learning. n.d. <em>Jeffrey M. Wooldridge/Introductory Econometrics A Modern Approach</em>.</p>
+</div>
+<div>
+<p>Wooldridge, Jeffrey M. 2002. “Econometric Analysis of Cross Section and Panel Data.” <em>Booksgooglecom</em> 58 (2): 752. doi:<a href="https://doi.org/10.1515/humr.2003.021">10.1515/humr.2003.021</a>.</p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Wooldridge2002">
+<p>Wooldridge, Jeffrey M. 2002. “Econometric Analysis of Cross Section and Panel Data.” <em>Booksgooglecom</em> 58 (2): 752. doi:<a href="https://doi.org/10.1515/humr.2003.021">10.1515/humr.2003.021</a>.</p>
+</div>
+<div id="ref-Editors2009">
+<p>Editors, Series, Robert Gentleman, Kurt Hornik, and Giovanni G Parmigiani. 2009. <em>Use R !</em> doi:<a href="https://doi.org/10.1007/978-0-387-78171-6">10.1007/978-0-387-78171-6</a>.</p>
+</div>
+<div id="ref-Champernowne1972">
+<p>Champernowne, D. G., and H. Theil. 1972. “Principles of Econometrics.” <em>The Economic Journal</em> 82 (325): 222. doi:<a href="https://doi.org/10.2307/2230222">10.2307/2230222</a>.</p>
+</div>
+<div id="ref-Farnsworth2008">
+<p>Farnsworth, Grant V. 2008. “Econometrics in R.” <em>I Can</em>, 50.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="evaluacion-predictiva-del-modelo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/referencias.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
